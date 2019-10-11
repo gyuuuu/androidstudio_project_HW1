@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editnewid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="ID 입력" />
+    <Button
+        android:id="@+id/checkduplicate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="중복확인" />
+
+    <EditText
+        android:id="@+id/editnewpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="PASSWORD 입력(숫자만 가능)" />
+    <Button
+        android:id="@+id/checkpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="규칙확인" />
+
+    <EditText
+        android:id="@+id/editname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="이름" />
+
+    <EditText
+        android:id="@+id/editphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="전화번호('-' 없이 번호만)" />
+
+    <EditText
+        android:id="@+id/editaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="주소" />
+
+    <TextView
+        android:id="@+id/textagree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="개인정보 이용 동의"
+        android:textSize="30dp"
+        android:textStyle="italic"/>
+
+    <RadioGroup
+        android:id="@+id/rGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <RadioButton
+            android:id="@+id/radioagree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동의함" />
+        <RadioButton
+            android:id="@+id/radiodisagree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동의안함" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnReturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="돌아가기" />
+
+    <Button
+        android:id="@+id/btnJoin"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center|center_vertical"
+        android:text="회원가입" />
+
+</LinearLayout>
