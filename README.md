@@ -1,5 +1,4 @@
 # androidstudio_project_HW1
-**리눅스 우분투환경에서 개발하였습니다**
 ---
 데이터베이스를 사용하지 않고 배열을 사용하여 유저관리하였습니다.
 앱이 실행되고 있는 동안은 유저관리가 가능하지만 앱이 종료되면 데이터가 삭제됩니다.
@@ -19,3 +18,16 @@
 * 추가된 배열을 다시 첫번째 액티비티로 넘겨준다.
 3. 세번재 페이지 : 계산기
 * 간단한 사칙연산이 가능하다
+
+
+**리눅스 우분투환경에서 개발하였습니다**
+
+- java version "12" 2019-03-19
+ - Java(TM) SE Runtime Environment (build 12+33)
+ - Java HotSpot(TM) 64-Bit Server VM (build 12+33, mixed mode, sharing)
+
+ - SDK 플랫폼 : Android 10.0(Q), 9.0(Pie), 8.1(Oreo)
+  - Android SDK Build-Tools : 29.0.2, 28.0.3, 28.0.2
+  - Android Emulator
+  - Android SDK Platform-Tools
+  - Android SDK Tools
