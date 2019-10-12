@@ -53,11 +53,18 @@ public class SecondActivity extends Activity {
         setContentView(R.layout.second);
         setTitle("Second 액티비티");
 
-        setIdlist(idlist, "abc");
-        setPasswordlist(passwordlist, "0000");
-        setNamelist(namelist, "이인규");
-        setPhonelist(phonelist, "010112345678");
-        setAddlist(addlist, "대한민국");
+        Intent inIntent = getIntent();
+        ArrayList<String> ilist = inIntent.getStringArrayListExtra("Idlist");
+        ArrayList<String> plist = inIntent.getStringArrayListExtra("Passwordlist");
+        ArrayList<String> nlist = inIntent.getStringArrayListExtra("Namelist");
+        ArrayList<String> phlist = inIntent.getStringArrayListExtra("Phonelist");
+        ArrayList<String> alist = inIntent.getStringArrayListExtra("Addlist");
+        idlist = ilist;
+        passwordlist = plist;
+        namelist = nlist;
+        phonelist = phlist;
+        addlist = alist;
+
 
         btncheckid = (Button) findViewById(R.id.checkduplicate);
         btncheckpw = (Button) findViewById(R.id.checkpassword);
@@ -125,10 +132,11 @@ public class SecondActivity extends Activity {
                 ADDR = address.getText().toString();
                 setAddlist(addlist, ADDR);
                 Toast.makeText(SecondActivity.this, "회원가입 완료", Toast.LENGTH_SHORT).show();
-                Intent inintent = new Intent(getApplicationContext(), MainActivity.class);
-                inintent.putExtra("Idlist", idlist);
-                inintent.putExtra("Passwordlist", passwordlist);
-                startActivity(inintent);
+                Intent outintent = new Intent(getApplicationContext(), MainActivity.class);
+                outintent.putExtra("IDlist", idlist);
+                outintent.putExtra("PassWordlist", passwordlist);
+                setResult(RESULT_OK, outintent);
+                finish();
             }
         });
 

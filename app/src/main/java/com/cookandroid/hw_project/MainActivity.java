@@ -1,5 +1,6 @@
 package com.cookandroid.hw_project;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,12 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<String> idlist = new ArrayList<String>();
+    ArrayList<String> passwordlist = new ArrayList<String>();
+    ArrayList<String> namelist = new ArrayList<String>();
+    ArrayList<String> phonelist = new ArrayList<String>();
+    ArrayList<String> addlist = new ArrayList<String>();
+
     EditText ID, PASSWORD;
     String id, password;
 
@@ -22,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("메인 액티비티");
 
-        Intent intent = getIntent();
-        final ArrayList<String> idlist = intent.getStringArrayListExtra("Idlist");
-        final ArrayList<String> passwordlist = intent.getStringArrayListExtra("Passwordlist");
 
         ID = (EditText) findViewById(R.id.edittextid);
         PASSWORD = (EditText) findViewById(R.id.edittextpassword);
@@ -35,9 +39,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                startActivity(intent);
+                intent.putExtra("Idlist", idlist);
+                intent.putExtra("Passwordlist", passwordlist);
+                intent.putExtra("Namelist", namelist);
+                intent.putExtra("Phonelist", phonelist);
+                intent.putExtra("Addlist", addlist);
+                startActivityForResult(intent, 0);
             }
         });
+
 
         Button btnNewActivity2 = (Button) findViewById(R.id.btnNewActivity2);
         btnNewActivity2.setOnClickListener(new View.OnClickListener() {
@@ -70,5 +80,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode){
+                case 0:
+                    ArrayList<String> lista = data.getStringArrayListExtra("IDlist");
+                    ArrayList<String> listb = data.getStringArrayListExtra("PassWordlist");
+                    idlist = lista;
+                    passwordlist = listb;
+                    break;
+            }
+        }
     }
 }
